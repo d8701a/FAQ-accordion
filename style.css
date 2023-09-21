@@ -207,7 +207,7 @@ body {
         display: flex;
         justify-content: end;
         align-items: center;
-        background-image: ../images/bg-pattern-desktop.svg;
+        background-image: url(../images/bg-pattern-desktop.svg);
         background-position-x: -60rem;
         background-position-y: 60%;
         background-repeat: no-repeat;
