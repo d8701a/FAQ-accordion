@@ -27,7 +27,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](images/screenshot.jpg)
+![](images/screenshot.png)
 
 
 ### Links
@@ -73,5 +73,5 @@ I would love to continue working on my Javascript logic. DOM traversing and mani
 
 ## Author
 
-- Frontend Mentor - [@yd8701a](https://www.frontendmentor.io/profile/d8701a)
+- Frontend Mentor - [@d8701a](https://www.frontendmentor.io/profile/d8701a)
 
