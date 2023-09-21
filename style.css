@@ -75,7 +75,7 @@ body {
     top: 35%;
     left: 50%;
     transform: translateX(-50%);
-    background-image: url(../images/bg-pattern-mobile.svg);
+    background-image: url(./images/bg-pattern-mobile.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
