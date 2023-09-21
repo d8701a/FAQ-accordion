@@ -75,7 +75,7 @@ body {
     top: 35%;
     left: 50%;
     transform: translateX(-50%);
-    background-image: url(images/bg-pattern-mobile.svg);
+    background-image: ../images/bg-pattern-mobile.svg;
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -207,7 +207,7 @@ body {
         display: flex;
         justify-content: end;
         align-items: center;
-        background-image: url(images/bg-pattern-desktop.svg);
+        background-image: ../images/bg-pattern-desktop.svg;
         background-position-x: -60rem;
         background-position-y: 60%;
         background-repeat: no-repeat;
