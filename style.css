@@ -1,0 +1,231 @@
+/* 1. General CSS reset */ 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    list-style: none;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 2. Custom variables */
+
+:root {
+    --font-family: 'Kumbh Sans', sans-serif;
+   
+    --text-vdarkdesatblue: hsl(238, 29%, 16%);
+    --text-softred: hsl(14, 88%, 65%);
+    --text-vdarkgreyblue: hsl(237, 12%, 33%);
+    --text-darkgreyblue: hsl(240, 6%, 50%);
+
+    --bcggradient-sviolet: hsl(273, 75%, 66%);
+    --bcggradient-sblue: hsl(240, 73%, 65%);
+
+    --divider-lightgreyblue: hsl(240, 5%, 91%);  
+}
+
+/* 3. Cause 1rem to equal 10px for easy math. */
+html { 
+    font-size: 62.5%;
+}
+
+/* 4. Core body defaults */
+body {
+    margin: 0 auto;
+    height: 100vh;
+    max-width: 1440px;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    font-size: 1.2rem;
+    font-family: var(--font-family);
+    background-image: linear-gradient(var(--bcggradient-sviolet), var(--bcggradient-sblue));
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr;  
+    position: relative; 
+}
+
+.image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    z-index: 2; /* Place it above other content */
+    margin-block-start: 4.5rem;
+    margin-block-end: -13rem; 
+}
+
+.image img {
+    width: 65%;
+}
+
+.image:before {
+    position: absolute;
+    content: "";
+    top: 35%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-image: url(/images/bg-pattern-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 70%;
+    height: 100%;
+}
+
+.accordion {
+    z-index: 1; /* Place it above the image */
+    margin: 5rem auto; 
+    background-color: white;
+    border-radius: 3rem;
+    box-shadow: 0px 5px 8px 10px rgba(0, 0, 0, 0.158);
+    margin-inline: 2.5rem;
+    margin-block-end: 8rem;   
+}
+
+.accordion-item:last-child {
+    padding-block-end: 5rem;
+}
+
+.accordion-heading {
+    position: relative;
+    font-size: 3rem;
+    margin-block-start: 13rem;
+    margin-block-end: 2rem;
+    text-align: center;
+}
+
+.accordion-item {
+    position: relative;
+    padding-inline: 2rem;
+    padding-block: 1rem;
+}
+
+.accordion-item::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    right: 5%;
+    width: 90%;
+    height: 1px; /* Height of the divider */
+    background-color: var(--divider-lightgreyblue);
+}
+
+.accordion-item:last-child:after {
+    bottom: 33%;
+}
+
+.accordion-header  {
+    position: relative;
+    font-size: 1.4rem;
+    color: var(--text-vdarkdesatblue);
+    padding-block: 1rem;
+}
+
+.accordion-header:hover {
+    color: var(--text-softred);
+    cursor: pointer;
+}
+
+.accordion-header svg {
+    position: absolute;
+    top: 1.6rem;
+    right: 0;
+}
+
+.arrow {
+    transition: transform .3s ease;
+}
+
+.rotate-arrow {
+    transform: rotate(180deg);
+}
+
+.accordion-content p {
+    width: 90%;
+    font-size: 1.2rem;
+    color: var(--text-darkgreyblue);
+    text-align: left;
+}
+
+.hidden {
+    display: none;
+}
+
+.active {
+    color: black;
+    font-weight: bolder;
+}
+
+.attribution {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%)
+}
+
+@media (width > 768px) {
+
+    body {
+        min-height: unset;
+    }
+
+    .image {
+        display: none
+    }
+
+    .image-desktop {
+        display: block;
+        position: absolute;
+        top: 20%;
+        left: -8rem;
+        -webkit-clip-path: inset(0 0 0 17%);
+        clip-path: inset(0 0 0 17%);
+    }
+
+    .wrapper {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .accordion {
+        position: relative;
+        width: clamp(30rem, 79%, 92rem);
+        /* max-width: 92rem; */
+        margin: 15rem auto;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        background-image: url(/images/bg-pattern-desktop.svg);
+        background-position-x: -60rem;
+        background-position-y: 60%;
+        background-repeat: no-repeat;
+    }
+
+    .image-cube {
+        display: block;
+        position: absolute;
+        top: 48%;
+        left: -10%;
+    }
+
+    .accordion-items {
+        width: 50%;
+    }
+
+    .accordion-heading {
+        margin-block-start: 5rem;
+    }
+}
+
